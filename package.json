@@ -4,7 +4,7 @@
   "description": "Redis Integration micro-service",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "redis":"0.12.1"
   },
   "devDependencies":{
-    "frisby":"0.8.5"
+    "chai":"2.3.0",
+    "mocha":"*"
   } 
 }
