@@ -15,6 +15,18 @@ describe('redis',function(){
         })
     });
 
+    describe('about',function(){
+        it('should return integration properties',function(done){
+            seneca.act( {lpi:'redis', cmd:'about'}, function(err,result){
+                console.log( '%j', result );
+                assert.isObject(result,'result is an object');
+                assert.equal(result.name,'redis','name is redis');
+                done();
+            });
+        })
+    });
+
+
     describe('list',function(){
         it('should return a command\'s json schema',function(done){
             seneca.act({lpi:'redis',cmd:'list'}, function(err,list){
