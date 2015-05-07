@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "0.12"
+services:
+  - redis
+before_script:
+  - node test.js
+  - sleep 5

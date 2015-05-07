@@ -1,0 +1,31 @@
+{
+  "name": "lpi-redis",
+  "version": "1.0.0",
+  "description": "Redis Integration micro-service",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/linchpin-integrations/redis.git"
+  },
+  "keywords": [
+    "redis",
+    "linchpin",
+    "integrations"
+  ],
+  "author": "Isaac Chavez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/linchpin-integrations/redis/issues"
+  },
+  "homepage": "https://github.com/linchpin-integrations/redis",
+  "dependencies":{
+    "seneca":"0.6.1",
+    "redis":"0.12.1"
+  },
+  "devDependencies":{
+    "frisby":"0.8.5"
+  } 
+}

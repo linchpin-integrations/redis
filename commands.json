@@ -1,0 +1,61 @@
+{
+  "definitions":{
+    "redis":{
+      "type": "object",
+      "title": "Redis Connection Configuration Schema",
+      "LpConfig": "Integrations/redis",
+      "properties": {
+        "name": {
+          "type": "string",
+          "title": "Redis Connection Name"
+        },
+        "port": {
+          "title": "Redis Port",
+          "type": "integer",
+          "default":6379
+        },
+        "host": {
+          "title": "Redis Host",
+          "type": "string"
+        },
+        "db": {
+          "title": "Redis Database",
+          "type": "integer",
+          "default": 0
+        }
+      },
+      "required": [
+        "name",
+        "host"
+      ]
+    }
+  },
+  "type":"object",
+  "OneOf":[
+    {
+      "info": {
+        "type": "object",
+        "properties": {
+          "redis": {"$ref":"#/definitions/redis"}
+        }
+      },
+      "required": ["redis"]
+    },
+    {
+      "llen": {
+        "type":"object",
+        "properties":{
+          "redis":{"$ref":"#/definitions/redis"},
+          "key":{
+            "title":"Redis List Key",
+            "type":"string"
+          }
+        },
+        "required":[
+          "redis",
+          "key"
+        ]
+      }
+    }
+  ]
+}
