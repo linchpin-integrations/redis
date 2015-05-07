@@ -38,11 +38,6 @@ module.exports = function(options) {
 
         onConnect( args, function(client){
             var data = client.server_info;
-/*            var arr = data["db"+db].split(',');
-            arr.forEach(function(entry){
-                var res = entry.split('=');
-                data[res[0]] = res[1];
-            });*/
             client.quit();
             done(null, data);
         });
