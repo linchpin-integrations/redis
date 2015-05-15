@@ -1,5 +1,23 @@
 {
-  "definitions":{
+  "info": {
+    "type": "object",
+    "properties": {
+      "redis": {"$ref":"#/definitions/redis"}
+    },
+    "required": ["redis"]
+  },
+  "llen": {
+    "type":"object",
+    "properties":{
+      "redis":{"$ref":"#/definitions/redis"},
+      "key":{
+        "title":"Redis List Key",
+        "type":"string"
+      }
+    },
+    "required":[ "redis", "key" ]
+  },
+  ".definitions":{
     "redis":{
       "type": "object",
       "title": "Redis Connection Configuration Schema",
@@ -29,33 +47,5 @@
         "host"
       ]
     }
-  },
-  "type":"object",
-  "OneOf":[
-    {
-      "info": {
-        "type": "object",
-        "properties": {
-          "redis": {"$ref":"#/definitions/redis"}
-        }
-      },
-      "required": ["redis"]
-    },
-    {
-      "llen": {
-        "type":"object",
-        "properties":{
-          "redis":{"$ref":"#/definitions/redis"},
-          "key":{
-            "title":"Redis List Key",
-            "type":"string"
-          }
-        },
-        "required":[
-          "redis",
-          "key"
-        ]
-      }
-    }
-  ]
+  }
 }
