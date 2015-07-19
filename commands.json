@@ -1,6 +1,7 @@
 {
   "info": {
     "type": "object",
+    "description":"The info commands executes server_info on the redis server and stores the result in a LinchPin event.",
     "properties": {
       "redis": {"$ref":"#/definitions/redis"}
     },
@@ -8,6 +9,7 @@
   },
   "llen": {
     "type":"object",
+    "description":"The llen command executes llen on the specified key and stores the result as a LinchPin event.",
     "properties":{
       "redis":{"$ref":"#/definitions/redis"},
       "key":{
