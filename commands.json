@@ -23,7 +23,8 @@
     "redis":{
       "type": "object",
       "title": "Redis Connection Configuration Schema",
-      "LpConfig": "Integrations/redis",
+      "description":"Redis Server integration. You can monitor a server, or specific lists or keys.",
+      ".linchpin": "Integrations/redis",
       "properties": {
         "name": {
           "type": "string",
