@@ -7,7 +7,7 @@ describe('redis',function(){
 
     describe('info',function(){
         it('should connect and get info from server',function(done){
-            seneca.act( {lpi:'redis', cmd:'info', redis:{host:'localhost',port:6379}}, function(err,result){
+            seneca.act( {lpi:'redis', cmd:'info', config:{redis:{host:'localhost',port:6379}}}, function(err,result){
                 console.log( '%j', result );
                 assert.isObject(result,'result is an object');
                 done();
