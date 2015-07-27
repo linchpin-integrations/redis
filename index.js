@@ -33,9 +33,6 @@ module.exports = function(options) {
     };
 
     function info( args, done ){
-
-        var db = args.redis.db || 0;
-
         onConnect( args, function(client){
             var data = client.server_info;
             client.quit();
@@ -71,7 +68,11 @@ module.exports = function(options) {
     function onConnect( args, func ){
         var port = args.redis.port || 6379;
         var host = args.redis.host || "localhost";
-        var db = args.redis.db || 0;
+        var db = 0;
+
+        if(args.redis.hasOwnProperty('db')){
+            db = args.redis.db;
+        }
 
         var client = redis.createClient(port, host, {});
         client.on("ready", function(){
