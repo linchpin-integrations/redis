@@ -33,7 +33,7 @@ module.exports = function(options) {
     };
 
     function info( args, done ){
-        onConnect( args, function(client){
+        onConnect( args.config, function(client){
             var data = client.server_info;
             client.quit();
             done(null, data);
@@ -43,10 +43,10 @@ module.exports = function(options) {
 
     function llen ( args, done ){
 
-        var key = args.redis.key;
+        var key = args.config.redis.key;
         var result = {};
 
-        onConnect( args, function(client){
+        onConnect( args.config, function(client){
             client.llen(key,function(err,llen){
                 if (err) return console.log(err);
 
