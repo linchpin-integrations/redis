@@ -3,7 +3,7 @@
     "type": "object",
     "description":"The info commands executes server_info on the redis server and stores the result in a LinchPin event.",
     "properties": {
-      "redis": {"$ref":"#/definitions/redis"}
+      "redis": {"$ref":"#/definitions/server"}
     },
     "required": ["redis"]
   },
@@ -11,7 +11,7 @@
     "type":"object",
     "description":"The llen command executes llen on the specified key and stores the result as a LinchPin event.",
     "properties":{
-      "redis":{"$ref":"#/definitions/redis"},
+      "redis":{"$ref":"#/definitions/server"},
       "key":{
         "title":"Redis List Key",
         "type":"string"
@@ -20,11 +20,11 @@
     "required":[ "redis", "key" ]
   },
   ".definitions":{
-    "redis":{
+    "server":{
       "type": "object",
       "title": "Redis Connection Configuration Schema",
       "description":"Redis Server integration. You can monitor a server, or specific lists or keys.",
-      ".linchpin": "Integrations/redis/server",
+      ".linchpin": "integrations/redis/server",
       "properties": {
         "name": {
           "type": "string",
